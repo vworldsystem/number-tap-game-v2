@@ -59,22 +59,26 @@ body {
   .controls {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 20px;
     gap: 10px;
   }
   
   .controls button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 24px;
+    font-size: 14px;
     font-weight: bold;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    white-space: nowrap; /* 줄바꿈 방지 */
-    height: 48px; /* 고정 높이로 정렬 */
+    white-space: nowrap;
+    height: 50px;
+    line-height: 1;
+    box-sizing: border-box;
+    min-width: 100px;
   }
   
   .restart {
