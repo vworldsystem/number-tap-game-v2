@@ -116,26 +116,51 @@ export default function App() {
       {bestTime !== null && (
         <p style={{ fontSize: 16, color: "#009688" }}>🏆 최고 기록: {bestTime}초</p>
       )}
+ <div style={{
+  display: "flex",
+  justifyContent: "center",
+  gap: "10px",
+  marginTop: 30
+}}>
+  <button
+    onClick={startGame}
+    style={{
+      padding: "10px 20px",
+      fontSize: 16,
+      backgroundColor: "#2196f3",
+      color: "white",
+      border: "none",
+      borderRadius: 8,
+      cursor: "pointer",
+      boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+      minWidth: 120,
+      fontWeight: "bold"
+    }}
+  >
+    🔄 다시 시작
+  </button>
 
-<button
-  onClick={startGame}
-  style={{
-    marginTop: 20,
-    padding: "12px 24px",
-    fontSize: 18,
-    fontWeight: "bold",
-    backgroundColor: "#2196f3",
-    color: "white",
-    border: "none",
-    borderRadius: 8,
-    cursor: "pointer",
-    boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-    lineHeight: "1.2",
-    height: "auto"
-  }}
-      >
-        🔄 다시 시작
-      </button>
+  <button
+    onClick={() => window.location.reload()}
+    style={{
+      padding: "10px 20px",
+      fontSize: 16,
+      backgroundColor: "#f44336",
+      color: "white",
+      border: "none",
+      borderRadius: 8,
+      cursor: "pointer",
+      boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+      minWidth: 120,
+      fontWeight: "bold"
+    }}
+  >
+    ❌ 종료
+  </button>
+</div>
+{/* ✅ 여기까지 추가 */}
+
+
     </div>
   );
 }
