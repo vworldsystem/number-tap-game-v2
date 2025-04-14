@@ -24,6 +24,7 @@ export default function App() {
       }, 1000);
     } else if (next > 25) {
       clearInterval(timerRef.current);
+      if (tickSoundRef.current) tickSoundRef.current.pause(); // ✅ 추가!
       if (!bestTime || seconds < bestTime) {
         setBestTime(seconds);
         localStorage.setItem("bestTime", seconds);
@@ -42,6 +43,8 @@ export default function App() {
     setNext(1);
     setSeconds(0);
     clearInterval(timerRef.current);
+    if (tickSoundRef.current) tickSoundRef.current.pause(); // ✅ 시작할 때도 소리 멈춤
+  tickSoundRef.current.currentTime = 0;
   };
 
   const handleClick = (number) => {
@@ -114,19 +117,22 @@ export default function App() {
         <p style={{ fontSize: 16, color: "#009688" }}>🏆 최고 기록: {bestTime}초</p>
       )}
 
-      <button
-        onClick={startGame}
-        style={{
-          marginTop: 20,
-          padding: "10px 20px",
-          fontSize: 16,
-          backgroundColor: "#2196f3",
-          color: "white",
-          border: "none",
-          borderRadius: 8,
-          cursor: "pointer",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
-        }}
+<button
+  onClick={startGame}
+  style={{
+    marginTop: 20,
+    padding: "12px 24px",
+    fontSize: 18,
+    fontWeight: "bold",
+    backgroundColor: "#2196f3",
+    color: "white",
+    border: "none",
+    borderRadius: 8,
+    cursor: "pointer",
+    boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+    lineHeight: "1.2",
+    height: "auto"
+  }}
       >
         🔄 다시 시작
       </button>
