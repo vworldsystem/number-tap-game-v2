@@ -55,26 +55,26 @@ body {
     color: white;
     border-radius: 8px;
   }
+
   .controls {
     display: flex;
     justify-content: center;
-    gap: 10px;
     margin-top: 20px;
+    gap: 10px;
   }
   
   .controls button {
     padding: 10px 20px;
     font-size: 16px;
-    line-height: 1;
-    height: 48px;
-    min-width: 100px;
+    font-weight: bold;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    white-space: nowrap; /* 줄바꿈 방지 */
+    height: 48px; /* 고정 높이로 정렬 */
   }
   
   .restart {
